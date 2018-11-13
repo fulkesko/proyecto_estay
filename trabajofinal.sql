@@ -60,7 +60,7 @@ CREATE TABLE consulta(
 	id INT AUTO_INCREMENT,
 	paciente_id_fk INT,
 	trabajador_id_fk INT,
-	observacion TEXT
+	observacion TEXT,
 
 	PRIMARY KEY (id),
 	FOREIGN KEY (paciente_id_fk) REFERENCES paciente(id),
