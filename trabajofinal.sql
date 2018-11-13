@@ -52,6 +52,9 @@ CREATE TABLE paciente(
 	FOREIGN KEY (prevision_id_fk) REFERENCES prevision(id)
 );
 
+INSERT INTO paciente VALUES(NULL,'Flavio','Toro','213546',2);
+
+
 CREATE TABLE consulta(
 	id INT AUTO_INCREMENT,
 	paciente_id_fk INT,
@@ -63,4 +66,7 @@ CREATE TABLE consulta(
 	FOREIGN KEY (trabajador_id_fk) REFERENCES trabajador(id)
 
 );
+
+INSERT INTO consulta VALUES(NULL,1,2,'Paciente con una grave contuciòn anal ya que lo penetraron salvajemente');
+
 
