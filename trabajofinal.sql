@@ -70,4 +70,5 @@ CREATE TABLE consulta(
 
 INSERT INTO consulta VALUES(NULL,1,2,'Paciente con una grave contuciòn anal ya que lo penetraron salvajemente');
 
-
+/*consulta para revisar si existe el trabajador*/
+--"SELECT COUNT(*) FROM trabajador WHERE nombre = '" +nombre+ "' AND pass = SHA2('" +clave+ "',0)"
