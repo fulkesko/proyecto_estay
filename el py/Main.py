@@ -1,4 +1,10 @@
-import mysql.connector
-db = mysql.connector.connect(host='localhost',user='root',passwd='',database='hospital')
-cursor = db.cursor()
+from Funciones import *
+
+while(True):
+    nombre = input("ingrese nombre: ").lower().strip()
+    clave = input("ingrese clave: ").lower().strip()
+    valid = ValidacionInicioSesion(nombre, clave)
+    if (valid == 1):
+        break
+print("inicio sesion correcto")
 
