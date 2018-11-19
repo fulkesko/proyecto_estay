@@ -14,7 +14,7 @@ def ValidacionInicioSesion(nombre, clave):
     valor = rs[0][0]
     return valor
 
-def prevision():
+def prevision( ):
     print("Seleccion de Prevision")
     print("1.-Fonasa")
     print("2.-Isapre")

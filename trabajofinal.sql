@@ -45,11 +45,13 @@ INSERT INTO trabajador VALUES(NULL, 'Cordero', SHA2('holo',0), '98854712',2);
 
 CREATE TABLE paciente(
 	id INT AUTO_INCREMENT,
+	rut VARCHAR(30),
 	nombre VARCHAR(30),
 	apellido VARCHAR(30),
 	telefono VARCHAR(12),
 	prevision_id_fk INT,
-	
+
+	UNIQUE(rut),
 	PRIMARY KEY(id),
 	FOREIGN KEY (prevision_id_fk) REFERENCES prevision(id)
 );
