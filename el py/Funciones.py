@@ -14,7 +14,7 @@ def menuPrincipal():
         print("2.- Registrar pacientes")
         opc = print("->")
         if (opc == '1'):
-            pass
+            verPaciente()
         elif (opc == '2'):
             registrarPaciente()
     elif (opcion == '2'):
@@ -26,6 +26,16 @@ def menuPrincipal():
         if (opc == '2'):
             pass
 
+def verPaciente():
+    sql="SELECT paciente.nombre,paciente.apellido,paciente.telefono,prevision.nombre " \
+        "FROM paciente " \
+        "INNER JOIN prevision ON paciente.prevision_id_fk = prevision.id"
+    cursor.execute(sql)
+    rs = cursor.fetchall()
+    print("|", "Nombre", "|", "Apellido", "|", "Telefono", "|", "Prevision")
+    for fila in rs:
+
+         print("|",(fila[0]),"|", fila[1],"|",fila[2],"|",fila[3],"|")
 
 def ValidacionInicioSesion(rut, clave):
     sql = "SELECT count(*) FROM trabajador WHERE rut = '" +rut+ "' AND pass = SHA2('" +clave+ "',0)"
@@ -84,5 +94,5 @@ def generar_consulta(rut):
             menuPrincipal()
 
 if __name__ == "__main__":
-    generar_consulta('121-1') #simulacion de login 121-1 de trabajador
+   verPaciente() #simulacion de login 121-1 de trabajador
 

@@ -81,5 +81,8 @@ SELECT * FROM trabajador
 SELECT * FROM paciente
 
 SELECT * FROM consulta
+SELECT paciente.nombre,paciente.apellido,paciente.telefono,prevision.,nombre FROM paciente INNER JOIN prevision ON paciente.prevision_id_fk = prevision.id;
+
+
 /*consulta para revisar si existe el trabajador*/
 --"SELECT COUNT(*) FROM trabajador WHERE nombre = '" +nombre+ "' AND pass = SHA2('" +clave+ "',0)"
