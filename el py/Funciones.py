@@ -3,9 +3,29 @@ import mysql.connector
 db = mysql.connector.connect(host='localhost',user='root',passwd='',database='hospital')
 cursor = db.cursor()
 
-def MenuPrincipal():
 
-    pass
+def menuPrincipal():
+    print("-----Menú Principal-----")
+    print("1.- Pacientes")
+    print("2.- Consultas")
+    opcion = input("->")
+    if (opcion == '1'):
+        print("1.- Ver pacientes")
+        print("2.- Registrar pacientes")
+        opc = print("->")
+        if (opc == '1'):
+            pass
+        elif (opc == '2'):
+            registrarPaciente()
+    elif (opcion == '2'):
+        print("1.- Ingresar Consulta")
+        print("2.- Ver consultas")
+        opc = input("->")
+        if (opc == '1'):
+            generar_consulta()
+        if (opc == '2'):
+            pass
+
 
 def ValidacionInicioSesion(rut, clave):
     sql = "SELECT count(*) FROM trabajador WHERE rut = '" +rut+ "' AND pass = SHA2('" +clave+ "',0)"
