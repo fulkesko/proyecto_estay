@@ -40,8 +40,8 @@ CREATE TABLE trabajador(
 	FOREIGN KEY(cargo_id_fk) REFERENCES cargo(id)
 );
 
-INSERT INTO trabajador VALUES(NULL, 'Ana', SHA2('hola',0), '12345789', 5);
-INSERT INTO trabajador VALUES(NULL, 'Cordero', SHA2('holo',0), '98854712',2);
+INSERT INTO trabajador VALUES(NULL,'121-1' ,'Ana', SHA2('hola',0), '12345789', 5);
+INSERT INTO trabajador VALUES(NULL, '135-4','Cordero', SHA2('holo',0), '98854712',2);
 
 
 
@@ -59,7 +59,7 @@ CREATE TABLE paciente(
 	FOREIGN KEY (prevision_id_fk) REFERENCES prevision(id)
 );
 
-INSERT INTO paciente VALUES(NULL,'Flavio','Toro','213546',2);
+INSERT INTO paciente VALUES(NULL,'111-1','Flavio','Toro','213546',2);
 
 
 CREATE TABLE consulta(
@@ -76,5 +76,10 @@ CREATE TABLE consulta(
 
 INSERT INTO consulta VALUES(NULL,1,2,'Paciente con una grave contuciòn anal ya que lo penetraron salvajemente');
 
+SELECT * FROM trabajador
+
+SELECT * FROM paciente
+
+SELECT * FROM consulta
 /*consulta para revisar si existe el trabajador*/
 --"SELECT COUNT(*) FROM trabajador WHERE nombre = '" +nombre+ "' AND pass = SHA2('" +clave+ "',0)"

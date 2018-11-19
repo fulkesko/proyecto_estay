@@ -36,9 +36,33 @@ def registrarPaciente():
 
     sql = "INSERT INTO paciente VALUES(NULL, '"+rut+"', '"+nombre+"','"+apellido+"','"+telefono+"','"+previ+"')"
     cursor.execute(sql)
+    db.commit()
     print ("ingreso correcto")
 
+def existe_paciente(rut):
+    sql = "SELECT COUNT(*) FROM paciente WHERE rut = '" + rut + " '"
+    cursor.execute(sql)
+    rs = cursor.fetchall()
+    return rs[0][0] == 1
+
 def generar_consulta(rut):
-    paciente = input("Nombre: ")
-    observacion = input("observación: ")
+    paciente = input("Rut: ")
+    if(existe_paciente(paciente)):
+        observacion = input("observación: ")
+        sql="INSERT INTO consulta VALUES (NULL,(SELECT id FROM paciente WHERE rut ='"+paciente+"'),(SELECT id FROM trabajador WHERE rut = '"+rut+"'),'"+observacion+"')"
+        print(sql)
+        cursor.execute(sql)
+        db.commit()
+    else:
+        print("No existe paciente .. que desea hacer ? xd ")
+        print("1.-Registrar")
+        print("2.-Menu")
+        op=input("ingrese opcion:")
+        if(op == '1'):
+            registrarPaciente()
+        else:
+            MenuPrincipal()
+
+if __name__ == "__main__":
+    generar_consulta('121-1') #simulacion de login 121-1 de trabajador
 
