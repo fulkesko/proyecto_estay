@@ -39,4 +39,5 @@ def registrarPaciente():
     print ("ingreso correcto")
 
 def Consulta():
-    pass
+    paciente =input("Nombre: ")
+    observacion = input("observación: ")

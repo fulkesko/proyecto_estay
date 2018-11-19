@@ -52,6 +52,7 @@ CREATE TABLE paciente(
 	prevision_id_fk INT,
 
 	UNIQUE(rut),
+
 	PRIMARY KEY(id),
 	FOREIGN KEY (prevision_id_fk) REFERENCES prevision(id)
 );
