@@ -4,7 +4,7 @@ db = mysql.connector.connect(host='localhost',user='root',passwd='',database='ho
 cursor = db.cursor()
 
 
-def menuPrincipal():
+def menuPrincipal(rut_empleado):
     print("-----Menú Principal-----")
     print("1.- Pacientes")
     print("2.- Consultas")
@@ -12,7 +12,7 @@ def menuPrincipal():
     if (opcion == '1'):
         print("1.- Ver pacientes")
         print("2.- Registrar pacientes")
-        opc = print("->")
+        opc = input("->")
         if (opc == '1'):
             verPaciente()
         elif (opc == '2'):
@@ -22,7 +22,7 @@ def menuPrincipal():
         print("2.- Ver consultas")
         opc = input("->")
         if (opc == '1'):
-            generar_consulta()
+            generar_consulta(rut_empleado)
         if (opc == '2'):
             pass
 
