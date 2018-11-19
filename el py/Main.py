@@ -12,4 +12,6 @@ while(True):
         print("reingrese los datos!! ")
         print("----------------------")
 print("inicio sesion correcto")
+menuPrincipal()
+
 
