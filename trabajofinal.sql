@@ -25,6 +25,7 @@ CREATE TABLE prevision(
 
 INSERT INTO prevision VALUES(NULL, 'Fonasa');
 INSERT INTO prevision VALUES(NULL, 'Isapre');
+INSERT INTO prevision VALUES(NULL, 'No posee');
 
 CREATE TABLE trabajador(
 	id INT AUTO_INCREMENT,

@@ -14,5 +14,16 @@ def ValidacionInicioSesion(nombre, clave):
     valor = rs[0][0]
     return valor
 
+def prevision():
+    print("Seleccion de Prevision")
+    print("1.-Fonasa")
+    print("2.-Isapre")
+    print("3.-No posee")
+    print("----------------------")
+    previ=input("Ingrese Opción: ")
+
+    return previ
+
+
 def Consulta():
     pass
