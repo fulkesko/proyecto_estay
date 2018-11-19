@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="befe5190-36dd-42ee-8ec7-5e05a3137614" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/trabajofinal.sql" afterPath="$PROJECT_DIR$/trabajofinal.sql" />
-    </list>
+    <list default="true" id="befe5190-36dd-42ee-8ec7-5e05a3137614" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,10 +11,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Funciones.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Funciones.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/el py/Funciones.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
+            <state relative-caret-position="569">
               <caret line="59" column="20" lean-forward="false" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
               <folding />
             </state>
@@ -33,7 +31,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trabajofinal.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="trabajofinal.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trabajofinal.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="475">
@@ -238,18 +236,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/el py/Funciones.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="59" column="20" lean-forward="false" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trabajofinal.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
           <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/el py/Funciones.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="59" column="20" lean-forward="false" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
           <folding />
         </state>
       </provider>
