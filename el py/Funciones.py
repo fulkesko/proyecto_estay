@@ -34,7 +34,7 @@ def ValidacionInicioSesion(rut, clave):
     valor = rs[0][0]
     return valor
 
-def prevision( ):
+def prevision():
     print("Seleccion de Prevision")
     print("1.-Fonasa")
     print("2.-Isapre")
@@ -81,7 +81,7 @@ def generar_consulta(rut):
         if(op == '1'):
             registrarPaciente()
         else:
-            MenuPrincipal()
+            menuPrincipal()
 
 if __name__ == "__main__":
     generar_consulta('121-1') #simulacion de login 121-1 de trabajador
