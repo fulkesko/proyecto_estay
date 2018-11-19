@@ -20,7 +20,7 @@ def prevision( ):
     print("2.-Isapre")
     print("3.-No posee")
     print("----------------------")
-    previ = input("Ingrese Opción: ")
+    previ = input("->")
 
     return previ
 
@@ -37,7 +37,7 @@ def registrarPaciente():
     sql = "INSERT INTO paciente VALUES(NULL, '"+rut+"', '"+nombre+"','"+apellido+"','"+telefono+"','"+previ+"')"
     cursor.execute(sql)
     db.commit()
-    print ("ingreso correcto")
+    print ("->")
 
 def existe_paciente(rut):
     sql = "SELECT COUNT(*) FROM paciente WHERE rut = '" + rut + " '"
@@ -57,7 +57,7 @@ def generar_consulta(rut):
         print("No existe paciente .. que desea hacer ? xd ")
         print("1.-Registrar")
         print("2.-Menu")
-        op=input("ingrese opcion:")
+        op=input("->")
         if(op == '1'):
             registrarPaciente()
         else:
