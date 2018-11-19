@@ -20,10 +20,23 @@ def prevision( ):
     print("2.-Isapre")
     print("3.-No posee")
     print("----------------------")
-    previ=input("Ingrese Opción: ")
+    previ = input("Ingrese Opción: ")
 
     return previ
 
+
+def registrarPaciente():
+    print("Registro de pacientes")
+    print("")
+    rut = input("rut: ")
+    nombre = input("Nombre: ")
+    apellido = input("Apellido: ")
+    telefono = input("Telefono: ")
+    previ = prevision()
+
+    sql = "INSERT INTO paciente VALUES(NULL, '"+rut+"', '"+nombre+"','"+apellido+"','"+telefono+"','"+previ+"')"
+    cursor.execute(sql)
+    print ("ingreso correcto")
 
 def Consulta():
     pass
