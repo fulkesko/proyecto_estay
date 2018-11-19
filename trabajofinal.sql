@@ -29,11 +29,13 @@ INSERT INTO prevision VALUES(NULL, 'No posee');
 
 CREATE TABLE trabajador(
 	id INT AUTO_INCREMENT,
+	rut VARCHAR(30),
 	nombre VARCHAR(60),
 	pass VARCHAR(64),
 	telefono VARCHAR(12),
 	cargo_id_fk INT,
-	
+
+	UNIQUE(rut),
 	PRIMARY KEY(id),
 	FOREIGN KEY(cargo_id_fk) REFERENCES cargo(id)
 );

@@ -7,8 +7,8 @@ def MenuPrincipal():
 
     pass
 
-def ValidacionInicioSesion(nombre, clave):
-    sql = "SELECT COUNT(*) FROM trabajador WHERE nombre = '" +nombre+ "' AND pass = SHA2('" +clave+ "',0)"
+def ValidacionInicioSesion(rut, clave):
+    sql = "SELECT count(*) FROM trabajador WHERE rut = '" +rut+ "' AND pass = SHA2('" +clave+ "',0)"
     cursor.execute(sql)
     rs = cursor.fetchall()
     valor = rs[0][0]
@@ -38,6 +38,7 @@ def registrarPaciente():
     cursor.execute(sql)
     print ("ingreso correcto")
 
-def Consulta():
-    paciente =input("Nombre: ")
+def generar_consulta(rut):
+    paciente = input("Nombre: ")
     observacion = input("observación: ")
+
