@@ -24,7 +24,18 @@ def menuPrincipal(rut_empleado):
         if (opc == '1'):
             generar_consulta(rut_empleado)
         if (opc == '2'):
-            pass
+            verConsulta()
+
+def verConsulta():
+    sql ="SELECT paciente.nombre,trabajador.nombre,consulta.fecha FROM consulta " \
+         "INNER JOIN paciente ON consulta.paciente_id_fk = paciente.id " \
+         "INNER JOIN trabajador ON consulta.trabajador_id_fk  = trabajador.id "
+    cursor.execute(sql)
+    rs = cursor.fetchall()
+    print("|", "Paciente", "|", "Trabajador", "|", "Fecha")
+    for fila in rs:
+        print("|", (fila[0]), "|", fila[1], "|", fila[2], "|")
+
 
 def verPaciente():
     sql="SELECT paciente.nombre,paciente.apellido,paciente.telefono,prevision.nombre " \

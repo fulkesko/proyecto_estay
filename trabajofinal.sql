@@ -66,6 +66,7 @@ CREATE TABLE consulta(
 	id INT AUTO_INCREMENT,
 	paciente_id_fk INT,
 	trabajador_id_fk INT,
+	fecha DATE,
 	observacion TEXT,
 
 	PRIMARY KEY (id),
@@ -74,15 +75,17 @@ CREATE TABLE consulta(
 
 );
 
-INSERT INTO consulta VALUES(NULL,1,2,'Paciente con una grave contuciòn anal ya que lo penetraron salvajemente');
+INSERT INTO consulta VALUES(NULL,1,2,Now(),'Paciente con una grave contuciòn anal ya que lo penetraron salvajemente');
 
 SELECT * FROM trabajador
 
 SELECT * FROM paciente
 
 SELECT * FROM consulta
-SELECT paciente.nombre,paciente.apellido,paciente.telefono,prevision.,nombre FROM paciente INNER JOIN prevision ON paciente.prevision_id_fk = prevision.id;
+SELECT paciente.nombre,paciente.apellido,paciente.telefono,prevision.nombre FROM paciente INNER JOIN prevision ON paciente.prevision_id_fk = prevision.id;
 
-
+SELECT paciente.nombre,trabajador.nombre,consulta.fecha FROM consulta
+ INNER JOIN paciente ON consulta.paciente_id_fk = paciente.id
+INNER JOIN trabajador ON consulta.trabajador_id_fk  = trabajador.id ;
 /*consulta para revisar si existe el trabajador*/
 --"SELECT COUNT(*) FROM trabajador WHERE nombre = '" +nombre+ "' AND pass = SHA2('" +clave+ "',0)"
