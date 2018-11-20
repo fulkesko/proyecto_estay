@@ -77,15 +77,29 @@ CREATE TABLE consulta(
 
 INSERT INTO consulta VALUES(NULL,1,2,Now(),'Paciente con una grave contuciòn anal ya que lo penetraron salvajemente');
 
+/* consulta para ver todos los trabajadores de la tabla trabajador*/
 SELECT * FROM trabajador
 
+/* consulta para ver todos los pacientes  de la tabla paciente*/
 SELECT * FROM paciente
 
+/*Consulta para ver las consultas que se han registrado en la tabla consulta */
 SELECT * FROM consulta
+
+
+/* consulta para ver los pacientes que estan registrados
+se muestra el nombre, apellido, telefono, y el nombre de la prevision por lo cual usamos INNER JOIN para unir la tabla paciente con la tabla prevision en esta consulta */
 SELECT paciente.nombre,paciente.apellido,paciente.telefono,prevision.nombre FROM paciente INNER JOIN prevision ON paciente.prevision_id_fk = prevision.id;
 
+
+/*En esta consulta mostramos el nombre del paciente, el nombre del trabajador, y la fecha en que se realizo la consulta utilizamos nuevamente el INNER JOIN para relacionar esta vez 3 tablas
+en esta consulta se deberia mostrar los datos de la tabla consulta, paciente y trabajador de la siguiente forma
+ Paciente | trabajador | fecha
+*/
 SELECT paciente.nombre,trabajador.nombre,consulta.fecha FROM consulta
  INNER JOIN paciente ON consulta.paciente_id_fk = paciente.id
 INNER JOIN trabajador ON consulta.trabajador_id_fk  = trabajador.id ;
+
+
 /*consulta para revisar si existe el trabajador*/
 --"SELECT COUNT(*) FROM trabajador WHERE nombre = '" +nombre+ "' AND pass = SHA2('" +clave+ "',0)"
