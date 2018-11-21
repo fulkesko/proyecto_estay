@@ -34,14 +34,14 @@ def menuPrincipal(rut_empleado):
             break
 
 def verConsulta():
-    sql ="SELECT paciente.nombre,trabajador.nombre,consulta.fecha FROM consulta " \
+    sql ="SELECT paciente.nombre,trabajador.nombre,consulta.fecha, consulta.observacion FROM consulta " \
          "INNER JOIN paciente ON consulta.paciente_id_fk = paciente.id " \
          "INNER JOIN trabajador ON consulta.trabajador_id_fk  = trabajador.id "
     cursor.execute(sql)
     rs = cursor.fetchall()
-    print("|", "Paciente", "|", "Trabajador", "|", "Fecha")
+    print("|", "Paciente", "|", "Trabajador", "|", "Fecha","|"," Observacion","|")
     for fila in rs:
-        print("|", (fila[0]), "|", fila[1], "|", fila[2], "|")
+        print("|", (fila[0]), "|", fila[1], "|", fila[2], "|",fila[3])
 
 
 def verPaciente():
@@ -50,10 +50,10 @@ def verPaciente():
         "INNER JOIN prevision ON paciente.prevision_id_fk = prevision.id"
     cursor.execute(sql)
     rs = cursor.fetchall()
-    print("|", "Nombre", "|", "Apellido", "|", "Telefono", "|", "Prevision")
+    print("|", "Nombre", "|", "Apellido", "|", "Telefono", "|", "Prevision","|")
     for fila in rs:
 
-         print("|",(fila[0]),"|", fila[1],"|",fila[2],"|",fila[3],"|")
+         print("|",(fila[0])," | ", fila[1],"|",fila[2],"|",fila[3],"|")
 
 def ValidacionInicioSesion(rut, clave):
     sql = "SELECT count(*) FROM trabajador WHERE rut = '" +rut+ "' AND pass = SHA2('" +clave+ "',0)"
