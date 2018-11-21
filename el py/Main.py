@@ -1,12 +1,13 @@
 from Funciones import *
+from ValidadorVacios import *
 
 while(True):
     print("----------------------")
-    rut = input("ingrese rut: ").lower().strip()
-    clave = input("ingrese clave: ").lower().strip()
+    rut = s_input("rut: ").lower().strip()
+    clave = s_input("clave: ").lower().strip()
     valid = ValidacionInicioSesion(rut, clave)
     if (valid == 1):
-        print("inicio sesion correcto")
+        print("inicio sesion correcto !")
         menuPrincipal(rut)
         break
     elif (valid != 1):
