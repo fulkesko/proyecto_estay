@@ -14,6 +14,7 @@ def menuPrincipal(rut_empleado):
         print("3.- Salir")
         opcion = s_input("->")
         if (opcion == '1'):
+            print("-----Pacientes-----")
             print("1.- Ver pacientes")
             print("2.- Registrar pacientes")
             opc = s_input("->")
@@ -22,15 +23,16 @@ def menuPrincipal(rut_empleado):
             elif (opc == '2'):
                 registrarPaciente()
         elif (opcion == '2'):
+            print("-----Consultas-----")
             print("1.- Ingresar Consulta")
-            print("2.- Ver consultas")
+            print("2.- Ver Consultas")
             opc = s_input("->")
             if (opc == '1'):
                 generar_consulta(rut_empleado)
             if (opc == '2'):
                 verConsulta()
         elif(opcion == '3'):
-            print("salida exitosa")
+            print("-----salida exitosa-----")
             break
 
 def verConsulta():
@@ -63,7 +65,7 @@ def ValidacionInicioSesion(rut, clave):
     return valor
 
 def prevision():
-    print("Seleccion de Prevision")
+    print("-----Seleccion de Prevision-----")
     print("1.-Fonasa")
     print("2.-Isapre")
     print("3.-No posee")
@@ -74,7 +76,7 @@ def prevision():
 
 
 def registrarPaciente():
-    print("Registro de pacientes")
+    print("-----Registro de pacientes-----")
     print("")
     rut = s_input("Rut: ")
     nombre = s_input("Nombre: ")
@@ -85,7 +87,7 @@ def registrarPaciente():
     sql = "INSERT INTO paciente VALUES(NULL, '"+rut+"', '"+nombre+"','"+apellido+"','"+telefono+"','"+previ+"')"
     cursor.execute(sql)
     db.commit()
-    print ("Registro exitoso")
+    print ("-----Registro exitoso-----")
     print ("")
 
 def existe_paciente(rut):
@@ -103,7 +105,7 @@ def generar_consulta(rut):
         cursor.execute(sql)
         db.commit()
     else:
-        print("No existe paciente .. que desea hacer ? xd ")
+        print("No existe paciente .. que desea hacer ?")
         print("1.-Registrar")
         print("2.-Menu Principal")
         op = s_input("->")
