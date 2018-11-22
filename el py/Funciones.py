@@ -8,6 +8,7 @@ cursor = db.cursor()
 
 def menuPrincipal(rut_empleado):
     while(True):
+        print("")
         print("-----Menú Principal-----")
         print("1.- Pacientes")
         print("2.- Consultas")
@@ -17,23 +18,31 @@ def menuPrincipal(rut_empleado):
             print("-----Pacientes-----")
             print("1.- Ver pacientes")
             print("2.- Registrar pacientes")
+            print("3.- Volver atras")
             opc = s_input("->")
             if (opc == '1'):
                 verPaciente()
             elif (opc == '2'):
                 registrarPaciente()
+            elif (opc == '3'):
+                menuPrincipal(rut_empleado)
         elif (opcion == '2'):
             print("-----Consultas-----")
             print("1.- Ingresar Consulta")
             print("2.- Ver Consultas")
+            print("3.- Volver atras")
             opc = s_input("->")
             if (opc == '1'):
                 generar_consulta(rut_empleado)
-            if (opc == '2'):
+            elif (opc == '2'):
                 verConsulta()
+            elif(opc == '3'):
+                menuPrincipal(rut_empleado)
         elif(opcion == '3'):
             print("-----salida exitosa-----")
             break
+        else:
+            print("ingrese una opción valida!!")
 
 def verConsulta():
     sql ="SELECT paciente.nombre,trabajador.nombre,consulta.fecha, consulta.observacion FROM consulta " \
@@ -69,7 +78,7 @@ def prevision():
     print("1.-Fonasa")
     print("2.-Isapre")
     print("3.-No posee")
-    print("----------------------")
+    print("--------------------------------")
     previ = s_input("->")
 
     return previ

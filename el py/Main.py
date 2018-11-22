@@ -2,7 +2,7 @@ from Funciones import *
 from ValidadorVacios import *
 
 while(True):
-    print("----------------------")
+    print("-----Inicio de sesion-----")
     rut = s_input("rut: ").lower().strip()
     clave = s_input("clave: ").lower().strip()
     valid = ValidacionInicioSesion(rut, clave)
