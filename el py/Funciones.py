@@ -10,6 +10,7 @@ def menuPrincipal(rut_empleado):
     while(True):
         print("")
         print("-----Menú Principal-----")
+        print("Ingrese una opción")
         print("1.- Pacientes")
         print("2.- Consultas")
         print("3.- Salir")
@@ -38,6 +39,7 @@ def menuPrincipal(rut_empleado):
                 verConsulta()
             elif(opc == '3'):
                 menuPrincipal(rut_empleado)
+
         elif(opcion == '3'):
             print("-----salida exitosa-----")
             break
