@@ -49,7 +49,8 @@ def menuPrincipal(rut_empleado):
 def verConsulta():
     sql ="SELECT paciente.nombre,trabajador.nombre,consulta.fecha, consulta.observacion FROM consulta " \
          "INNER JOIN paciente ON consulta.paciente_id_fk = paciente.id " \
-         "INNER JOIN trabajador ON consulta.trabajador_id_fk  = trabajador.id "
+         "INNER JOIN trabajador ON consulta.trabajador_id_fk  = trabajador.id"
+
     cursor.execute(sql)
     rs = cursor.fetchall()
     print("|", "Paciente", "|", "Trabajador", "|", "Fecha","|"," Observacion","|")
@@ -111,7 +112,7 @@ def generar_consulta(rut):
     paciente = s_input("Rut Paciente: ")
     if(existe_paciente(paciente)):
         observacion = s_input("observación: ")
-        sql="INSERT INTO consulta VALUES (NULL,(SELECT id FROM paciente WHERE rut ='"+paciente+"'),(SELECT id FROM trabajador WHERE rut = '"+rut+"'),'"+observacion+"')"
+        sql="INSERT INTO consulta VALUES (NULL,(SELECT id FROM paciente WHERE rut ='"+paciente+"'),(SELECT id FROM trabajador WHERE rut = '"+rut+"'),NOW(),'"+observacion+"')"
         print(sql)
         cursor.execute(sql)
         db.commit()
